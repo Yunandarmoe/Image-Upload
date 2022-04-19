@@ -7,7 +7,7 @@
             <form method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="input-group">
-                    <input type="file" name="image" class="form-control" aria-label="Upload">
+                    <input type="file" name="image[]" multiple class="form-control" aria-label="Upload">
                     <button class="btn btn-primary" type="submit">Button</button>
                 </div>
             </form>
