@@ -10,4 +10,10 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function store(Request $request)
+    {
+        $filename = time() .'_'. $request->file('image')->getClientOriginalName();
+        $request->file('image')->move(public_path('image'), $filename);
+    }
 }
