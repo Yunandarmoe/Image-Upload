@@ -25,14 +25,13 @@ class HomeController extends Controller
             foreach ($request->file('image') as $image) {
                 $filename = time() .'_'. $image->getClientOriginalName();
                 $image->storeAs('upload', $filename);
-
                 $gallery = new Gallery();
                 $gallery->name = $filename;
                 $gallery->save();
             }
         }
 
-        return back();
+        return back()->with('status', 'The images were uploaded');
     }
 
     public function destroy($id)
@@ -41,7 +40,7 @@ class HomeController extends Controller
         Storage::delete('upload/' .$gallery->name);
         $gallery->delete();
         
-        return back();
+        return back()->with('status', 'A image was deleted');
     }
 
     public function download($id)
