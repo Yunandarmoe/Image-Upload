@@ -10,7 +10,8 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('home');
+        $galleries = Gallery::all();
+        return view('home', compact('galleries'));
     }
 
     public function store(Request $request)
