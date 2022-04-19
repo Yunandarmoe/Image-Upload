@@ -17,13 +17,13 @@
         @foreach ($galleries as $gallery) 
             <div class="col-md-4 mb-4">
                 <div class="card">
-                    <div class="card-body p-0" style="height: 210px">
+                    <div class="card-body p-0">
                         <img src="{{ asset('upload/' . $gallery->name) }}" alt="" class="img-fluid">
                     </div>
                     <div class="card-footer">
-                        <a href="" class="btn btn-info">View</a>
-                        <a href="" class="btn btn-success">Download</a>
-                        <a href="" class="btn btn-danger float-end">Delete</a>
+                        <a href="{{ asset('upload/' . $gallery->name) }}" target="_blank" class="btn btn-info">View</a>
+                        <a href="{{ route('home.download', $gallery->id) }}" class="btn btn-success">Download</a>
+                        <a href="{{ route('home.destroy', $gallery->id) }}" class="btn btn-danger float-end">Delete</a>
                     </div>
                 </div>
             </div>

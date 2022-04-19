@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Gallery;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
@@ -28,6 +29,20 @@ class HomeController extends Controller
         }
 
         return back();
+    }
 
+    public function destroy($id)
+    {
+        $gallery = Gallery::findOrFail($id);
+        Storage::delete('upload/' .$gallery->name);
+        $gallery->delete();
+        
+        return back();
+    }
+
+    public function download($id)
+    {
+        $gallery = Gallery::findOrFail($id);
+        return Storage::download('upload/' .$gallery->name);
     }
 }
