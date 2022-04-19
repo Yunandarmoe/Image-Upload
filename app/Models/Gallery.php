@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Gallery extends Model
 {
-    use HasFactory;
+    public function getImageLinkAttribute()
+    {
+        return asset('upload/' . $this->name);
+    }
 }

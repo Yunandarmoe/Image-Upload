@@ -18,10 +18,10 @@
             <div class="col-md-4 mb-4">
                 <div class="card">
                     <div class="card-body p-0">
-                        <img src="{{ asset('upload/' . $gallery->name) }}" alt="" class="img-fluid">
+                        <img src="{{ $gallery->image_link }}" alt="" class="img-fluid">
                     </div>
                     <div class="card-footer">
-                        <a href="{{ asset('upload/' . $gallery->name) }}" target="_blank" class="btn btn-info">View</a>
+                        <a href="{{ $gallery->image_link }}" target="_blank" class="btn btn-info">View</a>
                         <a href="{{ route('home.download', $gallery->id) }}" class="btn btn-success">Download</a>
                         <a href="{{ route('home.destroy', $gallery->id) }}" class="btn btn-danger float-end">Delete</a>
                     </div>
