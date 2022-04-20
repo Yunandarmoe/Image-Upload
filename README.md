@@ -4,7 +4,7 @@ This is a simple image upload using Laravel.
 
 # Installation
 
-git clone `https://github.com/Yunandarmoe/blog.git`
+git clone `https://github.com/Yunandarmoe/Image-Upload.git`
 
 Go to the project folder 
 
