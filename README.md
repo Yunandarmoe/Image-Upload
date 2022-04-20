@@ -30,6 +30,8 @@ Go to the project folder
 
   - Copy filesystem.php
   - php artisan storage:link
+  
+- Run `npm run watch` for running css
 
 Run `php artisan serve`
 
